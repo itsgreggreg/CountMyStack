@@ -1,0 +1,106 @@
+@font-face {
+  font-family: 'Typicons';
+  src: url('fonts/typicons-regular-webfont.eot');
+  src: url('fonts/typicons-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('fonts/typicons-regular-webfont.woff') format('woff'),
+    url('fonts/typicons-regular-webfont.ttf') format('truetype'),
+    url('fonts/typicons-regular-webfont.svg#TypiconsRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.typeicon {
+  font-family: "Typicons", sans-serif;
+  /* Reduce blur on icons in chrome, opera, safari and ios. */
+  /* This is hacky & bad. Maybe possible for firefox, not sure yet. */
+  -webkit-font-smoothing: antialiased;  -o-transform: scale(1); 
+}
+
+.typeicon.location:before {content: "A";}
+.typeicon.phone:before {content: "B";}
+.typeicon.home:before {content: "C";}
+.typeicon.camera:before {content: "D";}
+.typeicon.left:before {content: "E";}
+.typeicon.right:before {content: "F";}
+.typeicon.up:before {content: "G";}
+.typeicon.down:before {content: "H";}
+.typeicon.refresh:before {content: "I";}
+.typeicon.sync:before {content: "J";}
+.typeicon.loop:before {content: "K";}
+.typeicon.repeat:before {content: "L";}
+.typeicon.shuffle:before {content: "M";}
+.typeicon.rss:before {content: "N";}
+.typeicon.cog:before {content: "O";}
+.typeicon.spanner:before {content: "P";}
+.typeicon.barChart:before {content: "Q";}
+.typeicon.pieChart:before {content: "R";}
+.typeicon.lineChart:before {content: "S";}
+.typeicon.views:before {content: "T";}
+.typeicon.zoomIn:before {content: "V";}
+.typeicon.zoomOut:before {content: "U";}
+.typeicon.export:before {content: "W";}
+.typeicon.user:before {content: "X";}
+.typeicon.group:before {content: "Y";}
+.typeicon.microphone:before {content: "Z";}
+.typeicon.globe:before {content: "a";}
+.typeicon.thumbsUp:before {content: "b";}
+.typeicon.thumbsDown:before {content: "c";}
+.typeicon.tag:before {content: "d";}
+.typeicon.tab:before {content: "e";}
+.typeicon.warning:before {content: "f";}
+.typeicon.tick:before {content: "g";}
+.typeicon.beta:before {content: "h";}
+.typeicon.unlock:before {content: "i";}
+.typeicon.lock:before {content: "j";}
+.typeicon.eject:before {content: "k";}
+.typeicon.move:before {content: "l";}
+.typeicon.expand:before {content: "m";}
+.typeicon.cancel:before {content: "n";}
+.typeicon.power:before {content: "o";}
+.typeicon.compass:before {content: "p";}
+.typeicon.radar:before {content: "q";}
+.typeicon.directions:before {content: "r";}
+.typeicon.pin:before {content: "s";}
+.typeicon.mute:before {content: "t";}
+.typeicon.volume:before {content: "u";}
+.typeicon.world:before {content: "v";}
+.typeicon.write:before {content: "w";}
+.typeicon.minus:before {content: "x";}
+.typeicon.equals:before {content: "y";}
+.typeicon.feed:before {content: "z";}
+.typeicon.batteryNone:before {content: "0";}
+.typeicon.batteryLow:before {content: "1";}
+.typeicon.batteryMid:before {content: "2";}
+.typeicon.batteryHigh:before {content: "3";}
+.typeicon.batteryPower:before {content: "4";}
+.typeicon.plus:before {content: "5";}
+.typeicon.times:before {content: "6";}
+.typeicon.next:before {content: "7";}
+.typeicon.previous:before {content: "8";}
+.typeicon.edit:before {content: "9";}
+.typeicon.cut:before {content: "'";}
+.typeicon.anchor:before {content: "(";}
+.typeicon.bookmark:before {content: ")";}
+.typeicon.music:before {content: "*";}
+.typeicon.puzzle:before {content: "+";}
+.typeicon.archive:before {content: ",";}
+.typeicon.mobile:before {content: "-";}
+.typeicon.contrast:before {content: ".typeicon.";}
+.typeicon.brightness:before {content: "/";}
+.typeicon.flag:before {content: "{";}
+.typeicon.info:before {content: "|";}
+.typeicon.unknown:before {content: "}";}
+.typeicon.chat:before {content: "~";}
+.typeicon.mail:before {content: "[";}
+.typeicon.message:before {content: "\005C";}
+.typeicon.delete:before {content: "]";}
+.typeicon.backspace:before {content: "^";}
+.typeicon.infinity:before {content: "_";}
+.typeicon.key:before {content: "$";}
+.typeicon.time:before {content: "%";}
+.typeicon.grid:before {content: "\0022";}
+.typeicon.list:before {content: "\0023";}
+.typeicon.heart:before {content: ";";}
+.typeicon.star:before {content: "=";}
+.typeicon.back:before {content: "?";}
+.typeicon.forward:before {content: "@";}

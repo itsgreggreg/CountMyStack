@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Count My Stack</title>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <script src='/javascripts/libs.js' type='text/javascript'></script>
+    <script src='/javascripts/application.js' type='text/javascript'></script>
+    <link href='http://fonts.googleapis.com/css?family=Terminal+Dosis' rel='stylesheet' type='text/css' />
+    <link href='/stylesheets/normalize.css' rel='stylesheet' type='text/css'>
+    <link href='/stylesheets/typeicons.css' rel='stylesheet' type='text/css'>
+    <link href='/stylesheets/bootstrap.css' rel='stylesheet' type='text/css'>
+    <link href='/stylesheets/application.css' rel='stylesheet' type='text/css'>
+  </head>
+
+
+
+  <body>
+  </body>
+  <script data-template-name='application' type='text/x-handlebars'>
+    <div id="options">
+      <div class="logo">
+        Count My Stack
+      </div>
+      <form>
+      <div id="form_error"></div>
+      <p>
+        <label class="radio">
+          <input type="radio" name="wageType" value="hourly" checked>
+          Hourly Wage
+        </label>
+        <label class="radio">
+          <input type="radio" name="wageType" value="yearly">
+          Yearly Salary
+        </label>
+      </p>
+      <p>
+        <div class="input-prepend bbox">
+          <span class="add-on bbox">$</span><input class="span2 bbox" name="wage" size="12" type="text">
+        </div>
+      </p>
+      <p>
+        <input class="span1 bbox" name="hours" size="3" type="text" value="40">
+        hours / week
+      </p>
+
+      <p>
+        <button class="btn btn-info" {{action new_vis target="App.router.visualizationsController"}}id="add_vis_btn">Visualize!</button>
+      </p>
+      </form>
+      <hr>
+        <a {{action show_info target="App.router.applicationController"}} class="about">
+          About
+        </a>
+        <label class="show_pennies">
+          {{view Ember.Checkbox checkedBinding="App.router.visualizationsController.show_pennies"}}
+          Show pennies falling.
+        </label>
+      <hr>
+        Presets:
+        <ul>
+          <li><a {{action romney_2010 target="App.router.visualizationsController"}}>Mitt Romney 2010</a></li>
+          <li><a {{action barack_michelle_2010 target="App.router.visualizationsController"}}>Barack and Michell 2010</a></li>
+          <li><a {{action average_foxconn target="App.router.visualizationsController"}}>Average Foxconn Worker</a></li>
+          <li><a {{action us_minimum target="App.router.visualizationsController"}}>USA minimum wage</a></li>
+        <ul>
+    </div>
+    <div id="visualizations_wrapper">
+      <div class="scroll_wrapper">
+        {{outlet visualizations}}
+      </div>
+    </div>
+    <div id="info">
+      <h1 class="logo">Count My Stack</h1>
+      <h2>Income Visualizer</h2>
+      <p class="description">
+        Compare how fast money is earned at different wage levels and watch the pennys fall as they are made. Enter your own information or choose one of the presets on the left.
+      </p>
+      <button {{action hide_info target="App.router.applicationController"}} class="btn">Close</button>
+    </div>
+  </script>
+
+  <script data-template-name='visualizations' type='text/x-handlebars'>
+    {{#each content}}
+      <div {{bindAttr id="id"}} class="vis">
+        <div class="vis_content">
+          <button class="ex" {{action close id target="App.router.visualizationsController"}}>&times;</button>
+          <h1>{{title}}</h1>
+          <div class="info_row yearly_salary">
+            <div class="info_row_title">
+              Yearly Salary
+            </div>
+            <div class="info_row_val">
+              ${{yearly_wage_display}}
+            </div>
+          </div>
+          <div class="info_row hourly_wage">
+            <div class="info_row_title">
+              Hourly Wage @ {{hours_worked_per_week}}hrs / week
+            </div>
+            <div class="info_row_val">
+              ${{hourly_wage_display}}
+            </div>
+          </div>
+          <div class="info_row cent_working_time">
+            <div class="info_row_title">
+              Time to make 1 cent while working
+            </div>
+            <div class="info_row_val">
+              {{cent_working_time_display}}
+            </div>
+          </div>
+          <div class="info_row cent_time">
+            <div class="info_row_title">
+              Time to make 1 cent in life
+            </div>
+            <div class="info_row_val">
+              {{cent_time_display}}
+            </div>
+          </div>
+          <div class="info_row day_total">
+            <div class="info_row_title">
+              Total made today
+            </div>
+            <div class="info_row_val">
+              ${{day_total_display}}
+            </div>
+          </div>
+          <div class="info_row year_total">
+            <div class="info_row_title">
+              Total made year to date
+            </div>
+            <div class="info_row_val">
+              ${{year_total_display}}
+            </div>
+          </div>
+        </div>
+        <div class="paper">
+        </div>
+      </div>
+    {{/each}}
+  </script>
+
+</html>
